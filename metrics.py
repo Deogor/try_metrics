@@ -1,19 +1,11 @@
 import os
+import time
+import socket
+import shutil
+
 while True:
-  print('I run!')
   hostname = os.uname()[1]
-  print(hostname)
-
-  import socket
-  print(socket.gethostbyname(socket.gethostname()))
-  print(socket.gethostbyname(socket.getfqdn()))
-
-  import shutil
   total, used, free = shutil.disk_usage("/")
-  print("Total: %d GiB" % (total // (2**30)))
-  print("Used: %d GiB" % (used // (2**30)))
-  print("Free: %d GiB" % (free // (2**30)))
-
   f = open('index.html', 'w')
   f.write('network info' + '\n')
   f.write(hostname + '\n')
@@ -23,6 +15,17 @@ while True:
   f.write("Total: %d GiB" % (total // (2**30)) + '\n')
   f.write("Used: %d GiB" % (used // (2**30)) + '\n')
   f.write("Free: %d GiB" % (free // (2**30)) + '\n')
+
+  print('I run!')
+  print(hostname)
+
+  print(socket.gethostbyname(socket.gethostname()))
+  print(socket.gethostbyname(socket.getfqdn()))
+
+  print("Total: %d GiB" % (total // (2**30)))
+  print("Used: %d GiB" % (used // (2**30)))
+  print("Free: %d GiB" % (free // (2**30)))
+
   time.sleep(10)
 #  break
 #print('Not in loop!')
