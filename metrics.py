@@ -23,5 +23,6 @@ while True:
   f.write("Total: %d GiB" % (total // (2**30)) + '\n')
   f.write("Used: %d GiB" % (used // (2**30)) + '\n')
   f.write("Free: %d GiB" % (free // (2**30)) + '\n')
+  time.sleep(10)
 #  break
 #print('Not in loop!')
